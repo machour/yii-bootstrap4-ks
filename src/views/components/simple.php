@@ -12,6 +12,27 @@ $this->title = $class;
 
 $className = StringHelper::basename($class);
 
+// https://stackoverflow.com/a/24316675/732772
+function var_export54($var, $indent="") {
+    switch (gettype($var)) {
+        case "string":
+            return '"' . addcslashes($var, "\\\$\"\r\n\t\v\f") . '"';
+        case "array":
+            $indexed = array_keys($var) === range(0, count($var) - 1);
+            $r = [];
+            foreach ($var as $key => $value) {
+                $r[] = "$indent    "
+                     . ($indexed ? "" : var_export54($key) . " => ")
+                     . var_export54($value, "$indent    ");
+            }
+            return "[\n" . implode(",\n", $r) . "\n" . $indent . "]";
+        case "boolean":
+            return $var ? "TRUE" : "FALSE";
+        default:
+            return var_export($var, TRUE);
+    }
+}
+
 ?>
 
 <div class="component-example component-<?= $id ?>">
@@ -30,7 +51,7 @@ $className = StringHelper::basename($class);
     <?php endforeach ?>
 
     <?php foreach ($configs as $config) : ?>
-        <?php highlight_string('<?= ' . $className . '::widget(' . var_export($config, true) . ') ?>'); ?>
+        <?php highlight_string('<?= ' . $className . '::widget(' . var_export54($config) . ') ?>'); ?>
     <?php endforeach ?>
 
 <?php endforeach ?>
