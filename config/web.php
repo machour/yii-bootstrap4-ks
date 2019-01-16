@@ -56,27 +56,19 @@ if ($params['debug.enabled']) {
             'profiling' => [
                 '__class' => \yii\debug\panels\ProfilingPanel::class,
             ],
-            'db' => [
-                '__class' => \yii\helpers\UnsetArrayValue::class,
-            ],
+            'db' => new \yii\helpers\UnsetArrayValue(),
             'event' => [
                 '__class' => \yii\debug\panels\EventPanel::class,
             ],
-            'assets' => [
-                '__class' => \yii\helpers\UnsetArrayValue::class,
-            ],
+            'assets' => new \yii\helpers\UnsetArrayValue(),
             'mail' => [
                 '__class' => \yii\debug\panels\MailPanel::class,
             ],
             'timeline' => [
                 '__class' => \yii\debug\panels\TimelinePanel::class,
             ],
-            'user' => [
-                '__class' => \yii\helpers\UnsetArrayValue::class,
-            ],
-            'router' => [
-                '__class' => \yii\helpers\UnsetArrayValue::class,
-            ],
+            'user' => new \yii\helpers\UnsetArrayValue(),
+            'router' => new \yii\helpers\UnsetArrayValue(),
         ],
     ]);
 
