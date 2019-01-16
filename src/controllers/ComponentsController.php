@@ -7,11 +7,17 @@ use yii\web\NotFoundHttpException;
 use yii\bootstrap4\{
     Accordion,
     Alert,
+    Button,
+    Carousel,
+    Nav,
     Progress
 };
 use app\actions\{
     AccordionAction, 
-    AlertAction, 
+    AlertAction,
+    ButtonAction,
+    CarouselAction,
+    NavAction,
     ProgressAction
 };
 
@@ -22,6 +28,9 @@ class ComponentsController extends Controller
         return [
             'accordion' => ['__class' => AccordionAction::class],
             'alert' => ['__class' => AlertAction::class],
+            'button' => ['__class' => ButtonAction::class],
+            'carousel' => ['__class' => CarouselAction::class],
+            'nav' => ['__class' => NavAction::class],
             'progress' => ['__class' => ProgressAction::class],
         ];
     }
@@ -29,6 +38,9 @@ class ComponentsController extends Controller
     public static $components = [
         'alert' => Alert::class,
         'accordion' => Accordion::class,
+        'button' => Button::class,
+        'carousel' => Carousel::class,
+        'nav' => Nav::class,
         'progress' => Progress::class,
     ];
 
