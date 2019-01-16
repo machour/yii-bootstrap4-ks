@@ -12,6 +12,10 @@ $this->title = $class;
 
 $className = StringHelper::basename($class);
 
+$this->params['breadcrumbs'][] = ['url' => 'index', 'label' => 'Components'];
+$this->params['breadcrumbs'][] = $className;
+
+
 // https://stackoverflow.com/a/24316675/732772
 function var_export54($var, $indent="") {
     switch (gettype($var)) {

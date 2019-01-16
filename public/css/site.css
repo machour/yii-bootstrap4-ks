@@ -7502,7 +7502,7 @@ body {
   padding: 0.2em 1em;
   margin-bottom: 0.5em;
   margin-top: 1em; }
-.component-example.component-progress > h2:not(:first-child) {
+.component-example > h2:not(:first-child) {
   margin-top: 3rem; }
 .component-example.component-progress .progress + .progress {
   margin-top: 1rem; }

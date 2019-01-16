@@ -2,8 +2,13 @@
 use yii\helpers\Url;
 use yii\helpers\StringHelper;
 use yii\bootstrap4\Html;
-foreach ($components as $id => $class): ?>
 
-   <?= Html::a($class, ['components/component', 'id' => StringHelper::basename($id)]) ?>
+$this->params['breadcrumbs'][] = 'Components';
 
+?>
+
+<ul>
+<?php foreach ($components as $id => $class): ?>
+   <li><?= Html::a($class, ['components/component', 'id' => StringHelper::basename($id)]) ?></li>
 <?php endforeach ?>
+</ul>

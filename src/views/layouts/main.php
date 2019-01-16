@@ -8,7 +8,7 @@ use app\assets\AppAsset;
 use yii\bootstrap4\Html;
 use yii\helpers\Yii;
 use yii\widgets\Menu;
-use yii\widgets\Breadcrumbs;
+use yii\bootstrap4\Breadcrumbs;
 use yii\bootstrap4\NavBar;
 
 AppAsset::register($this);

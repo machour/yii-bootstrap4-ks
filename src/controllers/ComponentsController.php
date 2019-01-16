@@ -3,17 +3,52 @@
 namespace app\controllers;
 
 use yii\web\Controller;
+use yii\bootstrap4\Accordion;
 use yii\bootstrap4\Progress;
 use yii\web\NotFoundHttpException;
 
 class ComponentsController extends Controller
 {
     private $components = [
+        'accordion' => Accordion::class,
         'progress' => Progress::class,
     ];
 
 
     private $sections = [
+        'accordion' => [
+            'Basic' => [
+                [
+                    'items' => [
+                        // equivalent to the above
+                        [
+                            'label' => 'Collapsible Group Item #1',
+                            'content' => 'Anim pariatur cliche...',
+                            // open its content by default
+                            'contentOptions' => ['class' => 'in']
+                        ],
+                        // another group item
+                        [
+                            'label' => 'Collapsible Group Item #1',
+                            'content' => 'Anim pariatur cliche...',
+                            'contentOptions' => [],
+                            'options' => [],
+                        ],
+                        // if you want to swap out .card-block with .list-group, you may use the following
+                        [
+                            'label' => 'Collapsible Group Item #1',
+                            'content' => [
+                                'Anim pariatur cliche...',
+                                'Anim pariatur cliche...'
+                            ],
+                            'contentOptions' => [],
+                            'options' => [],
+                            'footer' => 'Footer' // the footer label in list-group
+                        ],
+                    ]
+                ]
+            ],
+        ],
         'progress' => [
             'Basic' => [
                 ['percent' => 0],
