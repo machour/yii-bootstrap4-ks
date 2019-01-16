@@ -2,17 +2,18 @@
 
 namespace app\actions;
 
-use yii\base\Action;
 use yii\bootstrap4\Accordion;
 use app\components\ConfigBasedAction;
 
 class AccordionAction extends ConfigBasedAction
 {
-    public function getClass() {
+    public function getClass(): string
+    {
         return Accordion::class;
     }
 
-    public function getConfig() {
+    public function getConfig(): array
+    {
         return [
             'Basic' => [
                 [

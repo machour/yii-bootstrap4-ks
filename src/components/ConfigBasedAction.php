@@ -6,8 +6,8 @@ use yii\base\Action;
 
 abstract class ConfigBasedAction extends Action
 {
-    abstract public function getConfig();
-    abstract public function getClass();
+    abstract public function getConfig(): array;
+    abstract public function getClass(): string;
 
     public function run()
     {

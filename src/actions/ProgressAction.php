@@ -2,7 +2,6 @@
 
 namespace app\actions;
 
-use yii\base\Action;
 use yii\bootstrap4\Progress;
 use app\components\ConfigBasedAction;
 
@@ -11,12 +10,12 @@ use app\components\ConfigBasedAction;
  */
 class ProgressAction extends ConfigBasedAction
 {
-    public function getClass()
+    public function getClass(): string
     {
         return Progress::class;
     }
 
-    public function getConfig()
+    public function getConfig(): array
     {
         return [
             'Basic' => [
