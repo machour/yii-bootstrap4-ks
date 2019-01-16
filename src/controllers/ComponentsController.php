@@ -9,11 +9,10 @@ use yii\web\NotFoundHttpException;
 
 class ComponentsController extends Controller
 {
-    private $components = [
+    public static $components = [
         'accordion' => Accordion::class,
         'progress' => Progress::class,
     ];
-
 
     private $sections = [
         'accordion' => [
@@ -99,7 +98,7 @@ class ComponentsController extends Controller
     public function actionIndex()
     {
         return $this->render('index', [
-            'components' => $this->components,
+            'components' => self::$components,
         ]);
     }
 
@@ -108,13 +107,13 @@ class ComponentsController extends Controller
      */
     public function actionComponent($id)
     {
-        if (!isset($this->components[$id])) {
+        if (!isset(self::$components[$id])) {
             throw new NotFoundHttpException("Unknown component");
         }
 
         return $this->render('simple', [
             'id' => $id,
-            'class' => $this->components[$id],
+            'class' => self::$components[$id],
             'sections' => $this->sections[$id],
         ]);
 

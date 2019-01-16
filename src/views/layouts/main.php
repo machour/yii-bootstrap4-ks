@@ -10,8 +10,18 @@ use yii\helpers\Yii;
 use yii\widgets\Menu;
 use yii\bootstrap4\Breadcrumbs;
 use yii\bootstrap4\NavBar;
+use yii\bootstrap4\Nav;
+use app\controllers\ComponentsController;
+use yii\helpers\ArrayHelper;
+use yii\helpers\StringHelper;
 
 AppAsset::register($this);
+
+$componentsItems = [];
+foreach (ComponentsController::$components as $id => $class) {
+    $componentsItems[] = ['label' => StringHelper::basename($class), 'url' => ['components/' . $id]];
+}
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -34,6 +44,16 @@ AppAsset::register($this);
             'class' => ['navbar-dark', 'bg-dark', 'navbar-expand-md']
         ]
     ]) ?>
+    <?= Nav::widget([
+    'items' => [
+        ['label' => 'Home', 'url' => ['/site/index']],
+        [
+            'label' => 'Components',
+            'items' => $componentsItems,
+        ],
+    ],
+    'options' => ['class' => 'navbar-nav ml-auto'],
+]); ?>
     <?php NavBar::end(); ?>
 </header>
 
