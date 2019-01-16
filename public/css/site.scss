@@ -1,17 +1,50 @@
-/* Sticky footer styles
--------------------------------------------------- */
+// Customize bootstrap
+
+$h1-font-size: 1.75rem;
+$h2-font-size: 1.50rem;
+$h3-font-size: 1.25rem;
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Our own styles
+
+$footer-height: 60px;
+
 html {
   position: relative;
   min-height: 100%;
 }
 body {
-  margin-bottom: 60px; /* Margin bottom by footer height */
+  margin-bottom: $footer-height;
 }
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 60px; /* Set the fixed height of the footer here */
-  line-height: 60px; /* Vertically center the text there */
+  height: $footer-height;
+  line-height: $footer-height;
   background-color: #f5f5f5;
+}
+
+.component-example {
+  svg {
+    background: #563d7c;
+    color: white;
+    border-radius: 8px;
+  }
+  code {
+    background: #efeeee;
+    display: block;
+    padding: 0.2em 1em;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+  }
+  &.component-progress {
+    > h2:not(:first-child) {
+      margin-top: 3rem;
+    }
+    .progress + .progress {
+      margin-top: 1rem;
+    }
+  }
 }

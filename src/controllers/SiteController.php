@@ -2,23 +2,10 @@
 
 namespace app\controllers;
 
-use yii\helpers\Yii;
 use yii\web\Controller;
-use yii\web\Response;
-use yii\web\filters\AccessControl;
-use yii\web\filters\VerbFilter;
 
 class SiteController extends Controller
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function behaviors()
-    {
-        return [
-        ];
-    }
-
     /**
      * {@inheritdoc}
      */
@@ -38,9 +25,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        foreach (['error', 'warning', 'danger', 'success', 'info'] as $type) {
+        /*foreach (['error', 'warning', 'danger', 'success', 'info'] as $type) {
             $this->app->getSession()->addFlash($type, 'Hello World! This is a ' . $type . ' message.');
-        }
+        }*/
         return $this->render('index');
     }
 }

@@ -20,11 +20,21 @@ $config = [
     ],
     'assetManager' => [
         'appendTimestamp' => true,
+        'bundles' => [
+            'yii\bootstrap4\BootstrapAsset' => [
+                'sourcePath' => null,
+                'css' => [],
+            ],
+        ]
     ],
     'urlManager' => [
         '__class' => UrlManager::class,
         'enablePrettyUrl' => true,
         'showScriptName' => false,
+        'rules' => [
+            'components/index' => 'components/index',
+            'components/<id:.*>' => 'components/component',
+        ],
     ],
 ];
 
