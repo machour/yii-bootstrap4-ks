@@ -9,6 +9,6 @@ $this->params['breadcrumbs'][] = 'Components';
 
 <ul>
 <?php foreach ($components as $id => $class): ?>
-   <li><?= Html::a($class, ['components/component', 'id' => StringHelper::basename($id)]) ?></li>
+   <li><?= Html::a($class, ['components/' . $id]) ?></li>
 <?php endforeach ?>
 </ul>

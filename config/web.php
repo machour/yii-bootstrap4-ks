@@ -32,8 +32,6 @@ $config = [
         'enablePrettyUrl' => true,
         'showScriptName' => false,
         'rules' => [
-            'components/index' => 'components/index',
-            'components/<id:.*>' => 'components/component',
         ],
     ],
 ];
